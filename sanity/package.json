@@ -1,10 +1,10 @@
 {
-  "name": "slicks-slices-backend",
+  "name": "petes-pizzas-backend",
   "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "package.json",
-  "author": "Wes Bos <wesbos@gmail.com>",
+  "author": "Peter Hanley",
   "license": "UNLICENSED",
   "scripts": {
     "lint": "eslint .",
