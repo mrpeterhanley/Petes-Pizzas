@@ -1,4 +1,4 @@
-import path from 'path';
+const path = require('path');
 
 async function turnPizzasIntoPages({ graphql, actions }) {
   const pizzaTemplate = path.resolve('./src/templates/Pizza.js');
