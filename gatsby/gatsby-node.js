@@ -53,34 +53,34 @@ async function turnToppingsIntoPages({ graphql, actions }) {
   });
 }
 
-async function fetchBeersAndTurnIntoNodes({
+async function fetchWinesAndTurnIntoNodes({
   actions,
   createNodeId,
   createContentDigest,
 }) {
-  const res = await fetch('https://sampleapis.com/beers/api/ale');
-  const beers = await res.json();
+  const res = await fetch('https://sampleapis.com/wines/api/reds');
+  const wines = await res.json();
 
-  for (const beer of beers) {
+  for (const wine of wines) {
     const nodeMeta = {
-      id: createNodeId(`beer-${beer.name}`),
+      id: createNodeId(`wine-${wine.wine}`),
       parent: null,
       children: [],
       internal: {
-        type: 'Beer',
+        type: 'Wine',
         mediaType: 'application/json',
-        contentDigest: createContentDigest(beer),
+        contentDigest: createContentDigest(wine),
       },
     };
     actions.createNode({
-      ...beer,
+      ...wine,
       ...nodeMeta,
     });
   }
 }
 
 export async function sourceNodes(params) {
-  await fetchBeersAndTurnIntoNodes(params);
+  await fetchWinesAndTurnIntoNodes(params);
 }
 
 export async function createPages(params) {
