@@ -28,6 +28,33 @@ async function turnPizzasIntoPages({ graphql, actions }) {
   });
 }
 
+async function turnSlicemastersIntoPages({ graphql, actions }) {
+  const slicemasterTemplate = path.resolve('./src/templates/Slicemaster.js');
+
+  const { data } = await graphql(`
+    query {
+      slicemasters: allSanityPerson {
+        nodes {
+          name
+          slug {
+            current
+          }
+        }
+      }
+    }
+  `);
+
+  data.slicemasters.nodes.forEach((person) => {
+    actions.createPage({
+      path: `slicemaster/${person.slug.current}`,
+      component: slicemasterTemplate,
+      context: {
+        slug: person.slug.current,
+      },
+    });
+  });
+}
+
 async function turnToppingsIntoPages({ graphql, actions }) {
   const toppingTemplate = path.resolve('./src/pages/pizzas.js');
 
@@ -87,5 +114,6 @@ export async function createPages(params) {
   await Promise.all([
     turnPizzasIntoPages(params),
     turnToppingsIntoPages(params),
+    turnSlicemastersIntoPages(params),
   ]);
 }
