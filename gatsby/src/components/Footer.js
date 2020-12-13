@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const FooterStyles = styled.footer`
   text-align: center;
-  color: var(--grey);
+  color: grey;
 `;
 
 export default function Footer() {
