@@ -41,20 +41,20 @@
                 </g>
                 <g id="Slicks" filter="url(#filter-5)" transform="translate(0.166867, 6.932493)" fill="#FF4949" font-family="FrenchFries-Regular, French Fries" font-weight="normal">
                     <text id="S" transform="translate(290.443993, 144.451997) rotate(-10.000000) translate(-290.443993, -144.451997) " font-size="130.591997">
-                        <tspan x="258.579546" y="179.047999">S</tspan>
+                        <tspan x="258.579546" y="179.047999">P</tspan>
                     </text>
                     <text id="L" transform="translate(358.819992, 129.667997) rotate(2.000000) translate(-358.819992, -129.667997) " font-size="159.543996">
-                        <tspan x="325.953929" y="193.263999">L</tspan>
+                        <tspan x="325.953929" y="193.263999">e</tspan>
                     </text>
                     <text id="i" transform="translate(396.395991, 129.667997) rotate(-7.000000) translate(-396.395991, -129.667997) " font-size="128.743997">
-                        <tspan x="379.916759" y="162.263999">i</tspan>
+                        <tspan x="379.916759" y="162.263999">t</tspan>
                     </text>
                     <text id="c" transform="translate(453.376684, 147.528059) rotate(10.000000) translate(-453.376684, -147.528059) " font-size="134.903997">
-                        <tspan x="420.932273" y="201.528059">c</tspan>
+                        <tspan x="420.932273" y="201.528059">e</tspan>
                     </text>
-                    <text id="k" transform="translate(514.704802, 127.412779) rotate(-10.000000) translate(-514.704802, -127.412779) " font-size="159.543996">
+                    <!-- <text id="k" transform="translate(514.704802, 127.412779) rotate(-10.000000) translate(-514.704802, -127.412779) " font-size="159.543996">
                         <tspan x="474.021083" y="191.412779">k</tspan>
-                    </text>
+                    </text> -->
                     <text id="‘" transform="translate(549.781355, 136.440240) rotate(20.000000) translate(-549.781355, -136.440240) " font-size="134.903997">
                         <tspan x="539.798459" y="190.44024">‘</tspan>
                     </text>
@@ -63,11 +63,11 @@
                     </text>
                 </g>
                 <text id="SLICES" font-family="FrenchFries-Regular, French Fries" font-size="55.2999991" font-weight="normal" letter-spacing="15.8481355" fill="#000000">
-                    <tspan x="325.84304" y="275.938363">SLICES</tspan>
+                    <tspan x="325.84304" y="275.938363">PIZZAS</tspan>
                 </text>
                 <text id="EST-1994" font-family="FrenchFries-Regular, French Fries" font-size="13.2999998" font-weight="normal" letter-spacing="3.81157716" fill="#000000">
                     <tspan x="408.575167" y="66.7381519">EST </tspan>
-                    <tspan x="446.471375" y="66.7381519" letter-spacing="1.51847381">1994</tspan>
+                    <tspan x="446.471375" y="66.7381519" letter-spacing="1.51847381">1982</tspan>
                 </text>
             </g>
         </g>

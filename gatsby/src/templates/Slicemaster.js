@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 
 const SlicemasterStyles = styled.div`
   .description {
@@ -20,6 +21,7 @@ export default function SingleSlicemasterPage({ data }) {
 
   return (
     <Layout>
+      <SEO title={slicemaster.name} image={slicemaster.image.asset.src} />
       <SlicemasterStyles>
         <Img fluid={slicemaster.image.asset.fluid} />
         <div className="description">

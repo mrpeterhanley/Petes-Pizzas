@@ -7,8 +7,10 @@ export default {
     title: `Petes Pizzas`,
     siteUrl: `https://petes-pizzas.netlify.app`,
     description: `The best pizzas you'll never eat!`,
+    twitter: `@peterbrandon`,
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-source-sanity',

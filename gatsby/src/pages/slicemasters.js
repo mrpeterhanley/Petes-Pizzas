@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 
 const SlicemasterGrid = styled.div`
   display: grid;
@@ -43,6 +44,7 @@ export default function SlicemastersPage({ data }) {
   const slicemasters = data.slicemasters.nodes;
   return (
     <Layout>
+      <SEO title="Slicemasters" />
       <SlicemasterGrid>
         {slicemasters.map((person) => (
           <SlicemasterStyles>
