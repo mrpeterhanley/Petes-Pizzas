@@ -25,7 +25,7 @@ export default function SEO({ children, location, description, title, image }) {
       <meta charSet="utf-8" />
       <meta name="description" content={site.siteMetadata.description} />
       {location && <meta property="og:url" content={location.href} />}
-      <meta property="og:image" content={image || '/logo.svg'} />
+      <meta property="og:image" content={image || '/favicon.svg'} />
       <meta property="og:title" content={title} key="ogtitle" />
       <meta
         property="og:site_name"
