@@ -11,7 +11,8 @@
     "start": "npm run develop",
     "serve": "cross-env NODE_OPTIONS=\"-r esm\" gatsby serve",
     "clean": "gatsby clean",
-    "netlify": "netlify dev"
+    "netlify": "netlify dev",
+    "prebuild": "netlify-lambda install"
   },
   "eslintConfig": {
     "extends": [
