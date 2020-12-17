@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Img from 'gatsby-image';
 import MenuItemStyles from '../styles/MenuItemStyles';
 import calculatePizzaPrice from '../utils/calculatePizzaPrice';
 import formatMoney from '../utils/formatMoney';
+import { OrderContext } from './OrderContext';
 
-export default function PizzaOrder({ order, pizzas, removeFromOrder }) {
+export default function PizzaOrder({ pizzas, removeFromOrder }) {
+  const orderContext = useContext(OrderContext);
   return (
     <>
-      {order.map((singleOrder, index) => {
+      {orderContext.order.map((singleOrder, index) => {
         const pizza = pizzas.find(
           (singlePizza) => singlePizza.id === singleOrder.id
         );
 
         return (
-          <MenuItemStyles key={singleOrder.id}>
+          <MenuItemStyles key={`${singleOrder.id}-${index}`}>
             <Img fluid={pizza.image.asset.fluid} />
             <h2>{pizza.name}</h2>
             <p>
