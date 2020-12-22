@@ -32,22 +32,25 @@ export default function usePizza({ pizzas, values }) {
       email: values.email,
     };
 
-    const res = fetch(`${process.env.GATSBY_SERVERLESS_BASE}/placeOrder`, {
+    fetch(`${process.env.GATSBY_SERVERLESS_BASE}/placeOrder`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
-    });
-    const text = JSON.parse(await res.text());
-
-    if (res.status >= 400 && res.status < 600) {
-      setLoading(false);
-      setError(text.message);
-    } else {
-      setLoading(false);
-      setMessage('Success! Come on down for your pizza');
-    }
+    })
+      .then((res) => {
+        if (res.status >= 400 && res.status < 600) {
+          setLoading(false);
+          setError('Sorry! Something went wrong!');
+        } else {
+          setLoading(false);
+          setMessage('Success! Come on down for your pizza');
+        }
+      })
+      .catch((error) => {
+        setError(error);
+      });
   }
 
   return {

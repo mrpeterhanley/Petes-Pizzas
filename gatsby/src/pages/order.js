@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby';
 import React, { useContext } from 'react';
 import Img from 'gatsby-image';
+import styled from 'styled-components';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import useForm from '../utils/useForm';
@@ -12,6 +13,19 @@ import usePizza from '../utils/usePizza';
 import PizzaOrder from '../components/PizzaOrder';
 import calculateOrderTotal from '../utils/calculateOrderTotal';
 import { OrderContext } from '../components/OrderContext';
+
+const SuccessStyles = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    text-align: center;
+  }
+`;
 
 export default function OrderPage({ data }) {
   const { values, updateValues } = useForm({
@@ -33,7 +47,14 @@ export default function OrderPage({ data }) {
   });
 
   if (message) {
-    return <p>{message}</p>;
+    return (
+      <Layout>
+        <SuccessStyles>
+          <div>👍👍👍</div>
+          <p>{message}</p>
+        </SuccessStyles>
+      </Layout>
+    );
   }
 
   return (
