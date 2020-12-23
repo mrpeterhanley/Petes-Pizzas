@@ -32,14 +32,26 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+function wait(ms = 0) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
 exports.handler = async (event, context) => {
+  await wait(1000);
   const body = JSON.parse(event.body);
+
+  if (body.mapleSyrup) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: 'Invalid form submission!' }),
+    };
+  }
 
   const requiredFields = ['email', 'name', 'order'];
 
   for (const field of requiredFields) {
-    console.log(`Checking that ${field} is good`);
-
     if (!body[field]) {
       return {
         statusCode: 400,
@@ -48,6 +60,15 @@ exports.handler = async (event, context) => {
         }),
       };
     }
+  }
+
+  if (!body.order.length) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({
+        message: `Why would you order nothing?`,
+      }),
+    };
   }
 
   const info = await transporter.sendMail({

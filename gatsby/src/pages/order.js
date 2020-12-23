@@ -31,6 +31,7 @@ export default function OrderPage({ data }) {
   const { values, updateValues } = useForm({
     name: '',
     email: '',
+    mapleSyrup: '',
   });
   const orderContext = useContext(OrderContext);
   const pizzas = data.pizzas.nodes;
@@ -61,7 +62,7 @@ export default function OrderPage({ data }) {
     <Layout>
       <SEO title="Order a Pizza!" />
       <OrderStyles onSubmit={submitOrder}>
-        <fieldset>
+        <fieldset disabled={loading}>
           <legend>Your Info</legend>
           <label htmlFor="name">
             Name
@@ -83,8 +84,16 @@ export default function OrderPage({ data }) {
               onChange={updateValues}
             />
           </label>
+          <input
+            type="mapleSyrup"
+            name="mapleSyrup"
+            id="mapleSyrup"
+            value={values.mapleSyrup}
+            onChange={updateValues}
+            className="mapleSyrup"
+          />
         </fieldset>
-        <fieldset className="menu">
+        <fieldset className="menu" disabled={loading}>
           <legend>Menu</legend>
           {pizzas.map((pizza) => (
             <MenuItemStyles key={pizza.id}>
@@ -114,11 +123,11 @@ export default function OrderPage({ data }) {
             </MenuItemStyles>
           ))}
         </fieldset>
-        <fieldset className="order">
+        <fieldset className="order" disabled={loading}>
           <legend>Order</legend>
           <PizzaOrder pizzas={pizzas} removeFromOrder={removeFromOrder} />
         </fieldset>
-        <fieldset>
+        <fieldset disabled={loading}>
           <h3>
             Your Order Total is{' '}
             {calculateOrderTotal(orderContext.order, pizzas)}
