@@ -5,13 +5,15 @@ import styled from 'styled-components';
 const ToppingsStyles = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
   margin-bottom: 4rem;
+  > * {
+    margin: 1rem;
+  }
   a {
     display: grid;
     padding: 5px;
     grid-template-columns: auto 1fr;
-    gap: 0 1rem;
+    grid-gap: 0 1rem;
     background: var(--grey);
     align-items: center;
     border-radius: 2px;

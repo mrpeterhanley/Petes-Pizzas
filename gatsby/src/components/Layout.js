@@ -10,8 +10,7 @@ import SEO from './SEO';
 
 const SiteBorderStyles = styled.div`
   max-width: 1000px;
-  margin: 12rem auto 4rem auto;
-  margin-top: clamp(2rem, 10vw, 12rem);
+  margin: 10rem auto 4rem auto;
   background: white url(${stripes});
   background-size: 1200px;
   padding: 5px;
@@ -21,6 +20,9 @@ const SiteBorderStyles = styled.div`
   @media (max-width: 1100px) {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
+  }
+  @media (max-width: 800px) {
+    margin-top: 6rem;
   }
 `;
 
