@@ -4,7 +4,7 @@ const MenuItemStyles = styled.div`
   display: grid;
   grid-template-columns: 100px 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 0 1.3rem;
+  grid-gap: 0 1.3rem;
   align-content: center;
   align-items: center;
   border: 1px solid var(--grey);
@@ -29,6 +29,17 @@ const MenuItemStyles = styled.div`
     right: 0;
     box-shadow: none;
     line-height: 1rem;
+  }
+
+  @media (max-width: 450px) {
+    grid-template-rows: auto auto;
+    h2 {
+      font-size: 2rem;
+    }
+    button {
+      font-size: 1.2rem;
+      margin: 0.5rem;
+    }
   }
 `;
 

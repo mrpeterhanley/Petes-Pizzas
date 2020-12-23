@@ -27,6 +27,10 @@ const SiteBorderStyles = styled.div`
 const ContentStyles = styled.div`
   background: white;
   padding: 2rem;
+
+  @media (max-width: 400px) {
+    padding: 1rem;
+  }
 `;
 
 export default function Layout({ children }) {

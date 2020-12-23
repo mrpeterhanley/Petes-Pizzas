@@ -26,7 +26,7 @@ export default function WinesPage({ data }) {
   return (
     <Layout>
       <SEO title={`Wines! We have ${data.wines.nodes.length} in stock.`} />
-      <h2 className="center">
+      <h2 className="center" style={{ marginBottom: '1rem' }}>
         We have {data.wines.nodes.length} wines available. Dine in only.
       </h2>
       <WineGridStyles>

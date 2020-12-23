@@ -18,6 +18,10 @@ const OrderStyles = styled.form`
     }
   }
 
+  input {
+    width: 100%;
+  }
+
   .mapleSyrup {
     display: none;
   }

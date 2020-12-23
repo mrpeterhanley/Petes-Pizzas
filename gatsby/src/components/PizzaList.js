@@ -7,7 +7,12 @@ const PizzaGridStyles = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 4rem;
-  grid-auto-rows: auto auto 500px;
+  grid-auto-rows: auto auto 400px;
+
+  @media (max-width: 500px) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: auto auto 300px;
+  }
 `;
 
 const PizzaStyles = styled.div`
