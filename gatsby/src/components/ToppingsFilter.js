@@ -7,7 +7,7 @@ const ToppingsStyles = styled.div`
   flex-wrap: wrap;
   margin-bottom: 4rem;
   > * {
-    margin: 1rem;
+    margin: 0.5rem;
   }
   a {
     display: grid;
