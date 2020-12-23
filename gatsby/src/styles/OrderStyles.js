@@ -18,6 +18,10 @@ const OrderStyles = styled.form`
     }
   }
 
+  legend {
+    display: inline;
+  }
+
   input {
     width: 100%;
   }
