@@ -2,9 +2,9 @@ const nodemailer = require('nodemailer');
 
 function generateOrderEmail({ order, total }) {
   return `<div>
-    <h2>Your Recent Order for ${total}</h2>
-    <p>Please start walking over, we will have your order ready in the next 20 mins</p>
-    <ul>
+    <h1>Your Recent Order from Pete's Pizzas!</h1>
+    <p>We will have your order ready in the next 20 mins</p>
+    <ul style="list-style: none; padding-left: 0;">
       ${order
         .map(
           (item) => `<li>
@@ -14,12 +14,7 @@ function generateOrderEmail({ order, total }) {
         )
         .join('')}
     </ul>
-    <p>Your total is <strong>${total}</strong> due at pickup</p>
-    <style>
-      ul {
-        list-style: none;
-      }
-    </style>
+    <p>Your order total is <strong>${total}</strong> due at pickup.</p>
   </div>`;
 }
 
